@@ -7,3 +7,4 @@ resource "aws_subnet" "subnets" {
     Name = "${var.env}-subnet-${count.index + 1}"
   }
 }
+
