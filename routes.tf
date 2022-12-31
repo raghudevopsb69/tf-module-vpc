@@ -5,4 +5,20 @@ resource "aws_route" "route_to_app_vpc_in_default_vpc" {
 }
 
 
+### Route tables
+resource "aws_route_table" "public" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "${var.env}_public"
+  }
+}
+
+resource "aws_route_table" "private" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "${var.env}_private"
+  }
+}
 
