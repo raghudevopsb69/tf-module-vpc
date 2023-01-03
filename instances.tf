@@ -18,7 +18,7 @@ resource "aws_instance" "app" {
   }
 }
 
-resource "aws_instance" "public" {
+resource "aws_instance" "db" {
   ami                    = "ami-0a017d8ceb274537d"
   instance_type          = "t3.micro"
   subnet_id              = aws_subnet.db_subnets.*.id[0]
