@@ -12,7 +12,7 @@ resource "aws_network_acl" "app" {
 
   ingress {
     protocol   = "tcp"
-    rule_no    = 99999
+    rule_no    = 32766
     action     = "allow"
     cidr_block = var.workstation_ip
     from_port  = 22
