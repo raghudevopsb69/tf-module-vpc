@@ -10,6 +10,15 @@ resource "aws_network_acl" "app" {
     to_port    = 0
   }
 
+  ingress {
+    protocol   = "tcp"
+    rule_no    = 99999
+    action     = "allow"
+    cidr_block = var.workstation_ip
+    from_port  = 22
+    to_port    = 22
+  }
+
   tags = {
     Name = "app"
   }
